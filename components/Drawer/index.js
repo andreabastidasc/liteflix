@@ -23,6 +23,7 @@ const Drawer = props => {
     const handleModal = (e) => {
       e.preventDefault
       setShowModal(true)
+      setOpenDrawer(false)
     }
 
   return (
@@ -37,11 +38,11 @@ const Drawer = props => {
           ) : (
             <div className={styles['drawer-header-icons']}>
               <Icon name="notifications" />
-              <Icon name="plus" />
+              <img src='/img/userIcon.png' />
             </div>
           )}
           {isMobile ? (
-            <Icon name="plus" />
+            <img src='/img/userIcon.png' />
           ) : null}
         </div>
         <div className={styles['drawer-body']}>

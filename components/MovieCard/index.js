@@ -1,4 +1,5 @@
 import React from 'react'
+import {motion} from 'framer-motion'
 import styles from './MovieCard.module.scss'
 import Icon from '../icons'
 
@@ -16,7 +17,7 @@ const MovieCard = props => {
   const movieYear = parseDate();
 
   return (
-    <div className={styles.card}>
+    <motion.div className={styles.card}>
         <img src={image} width="100%" height="100%" />
         <div className={styles['card-wrapper']}>
             <Icon name="playRounded" width="40px" height="40px" />
@@ -35,7 +36,7 @@ const MovieCard = props => {
                 <p>{movieYear}</p>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

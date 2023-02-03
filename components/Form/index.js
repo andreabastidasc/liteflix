@@ -3,9 +3,10 @@ import styles from './Form.module.scss'
 import Icon from '../icons'
 import CustomProgressBar from '../ProgressBar';
 import useMobileScreenSize from '@/hooks/useMobileScreenSize';
+import Logo from '../Logo';
 
 const CustomForm = props => {
-    const {setShowModal, movies, setMovies} = props;
+    const {setShowModal, setMovies} = props;
     const isMobile = useMobileScreenSize();
     const inputRef = useRef(null);
     const [dragActive, setDragActive] = useState(false);
@@ -14,6 +15,7 @@ const CustomForm = props => {
     const [percentage, setPercentage] = useState(0);
     const [running, setRunning] = useState(true);
     const [name, setName] = useState();
+    const [success, setSuccess] = useState(false);
 
     //PROGRESS BAR 
 
@@ -25,7 +27,7 @@ const CustomForm = props => {
                 } else {
                   clearInterval(intervalId);
                 }
-              }, 700);
+              }, 800);
               return () => clearInterval(intervalId);
         }
         
@@ -101,9 +103,21 @@ const CustomForm = props => {
           });
         };
 
-        setShowModal(false)
+        setSuccess(true)
     }
 
+  if (success) {
+    return (
+      <div className={styles['success']}>
+        {!isMobile ? (
+          <Logo />
+        ) : null}
+        <p className={styles['success-title']}>¡Felicitaciones!</p>
+        <p className={styles['success-text']}>{name} fue correctamente subida.</p>
+        <button onClick={() => setShowModal(false)} className={styles['success-button']}>IR A HOME</button>
+      </div>
+    )
+  }
     
 
   return (

@@ -122,3 +122,49 @@
         margin-top: 48px;
     }
 }
+
+.success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 780px) {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 25%;
+    }
+
+    &-title {
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: 4px;
+        color: $white;
+        margin-top: 72px;
+    }
+    
+    &-text {
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 4px;
+        color: $white;
+    }
+
+    &-button {
+        height: 56px;
+        width: 248px;
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: 4px;
+        color: $black;
+        margin-top: 48px;
+        background: $white;
+        border: none;
+        margin-bottom: 40px;
+    }
+}

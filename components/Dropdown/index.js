@@ -1,4 +1,5 @@
 import React, {useRef} from 'react'
+import { motion, AnimatePresence } from "framer-motion"
 import Icon from '../icons';
 import styles from './Dropdown.module.scss'
 import useOutsideClick from '@/hooks/useOutsideClick';
@@ -19,23 +20,33 @@ const CustomDropdown = props => {
         <p>Ver: <span>{selected}</span></p>
         <Icon name="arrow"/>
       </button>
-      {open ? (
-        <div ref={dropdownRef} className={styles['dropdown-box']}>
-          {!isMobile ? (
-            <div className={styles['dropdown-indicator']}>
-              <Icon name="triangle" width="12" height="12" />
-            </div>
-          ) : null}
-          <button onClick={() => setSelected('POPULARES')}>
-            POPULARES 
-            {selected === 'POPULARES' ? <Icon name="check" /> : null}
-          </button>
-          <button onClick={() => setSelected('AGREGADAS')}>
-            MIS PELÍCULAS
-            {selected === 'AGREGADAS' ? <Icon name="check" /> : null}
-          </button>
-        </div>
-      ) : null}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="dropdown"
+            initial={!isMobile ? { opacity: 0 } : {y: 250}}
+            animate={!isMobile ? { opacity: 1 } : {y: 0}}
+            exit={!isMobile ? { opacity: 0 } : {y: 1}}
+            ref={dropdownRef} 
+            className={styles['dropdown-box']}
+          >
+            {!isMobile ? (
+              <div className={styles['dropdown-indicator']}>
+                <Icon name="triangle" width="12" height="12" />
+              </div>
+            ) : null}
+            <button onClick={() => setSelected('POPULARES')}>
+              POPULARES 
+              {selected === 'POPULARES' ? <Icon name="check" /> : null}
+            </button>
+            <button onClick={() => setSelected('AGREGADAS')}>
+              MIS PELÍCULAS
+              {selected === 'AGREGADAS' ? <Icon name="check" /> : null}
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
     </div>
   )
 }

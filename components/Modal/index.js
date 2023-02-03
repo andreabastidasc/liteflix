@@ -8,7 +8,7 @@ import useMobileScreenSize from '@/hooks/useMobileScreenSize';
 import NavbarMobile from '../NavbarMobile';
 
 const FormModal = props => {
-  const {showModal, setShowModal, movies, setMovies, success, setOpenDrawer} = props;
+  const {showModal, setShowModal, movies, setMovies, setOpenDrawer} = props;
   const isMobile = useMobileScreenSize()
 
   const handleClose = () => setShowModal(false);

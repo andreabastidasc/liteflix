@@ -50,6 +50,7 @@
             flex-direction: row;
             gap: 24px;
         }
+       
     }
 
     &-button {
@@ -69,6 +70,10 @@
         font-size: 18px;
         letter-spacing: 4px;
         color: $white;
+        transition: all 300ms ease-in-out;
+        &:hover {
+            gap: 24px;
+        }
 
         &-outlined {
             border: 1px solid $white;

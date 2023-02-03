@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './navbar.module.scss'
-import useMobileScreenSize from '@/hooks/useMobileScreenSize'
 import Icon from '../icons';
 import AddButton from '../AddButton';
 import Logo from '../Logo';
@@ -20,6 +19,9 @@ const NavbarDesktop = props => {
         </button>
         <button className={styles['navbar-button']}>
           <Icon name="notifications" />
+        </button>
+        <button className={styles['navbar-button']}>
+          <img src='/img/userIcon.png' />
         </button>
       </div>
     </nav>

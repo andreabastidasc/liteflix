@@ -2,6 +2,7 @@ import React from 'react'
 import Icon from '../icons';
 import Logo from '../Logo';
 import styles from './NavbarMobile.module.scss'
+import Image from 'next/image'
 
 const NavbarMobile = props => {
   const {setOpenDrawer, setShowModal} = props;
@@ -19,7 +20,7 @@ const NavbarMobile = props => {
         </button>
         <Logo />
         <button className={styles['navbar-button']}>
-            <Icon name="plus" />
+            <img src='/img/userIcon.png' />
         </button>
     </nav>
   )
