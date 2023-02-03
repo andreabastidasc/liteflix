@@ -81,6 +81,7 @@ export default function Home () {
               <ListContainer>
                 {shows.map((item, index) => (
                   <motion.div
+                    key={Math.random()}
                     initial={{ y: -100 }}
                     animate={{ y: 0 }}
                     transition={{ ease: 'easeOut', duration: 3 / (index + 1) }}
@@ -94,8 +95,15 @@ export default function Home () {
               <ListContainer>
                 {addedMovies.length
                   ? (
-                      addedMovies.map(item => (
-                    <MovieCard title={item.name} votes={10} image={item.image} date={today} />
+                      addedMovies.map((item, index) => (
+                        <motion.div
+                          key={Math.random()}
+                          initial={{ y: -100 }}
+                          animate={{ y: 0 }}
+                          transition={{ ease: 'easeOut', duration: 3 / (index + 1) }}
+                        >
+                          <MovieCard title={item.name} votes={10} image={item.image} date={today} />
+                        </motion.div>
                       ))
                     )
                   : (
