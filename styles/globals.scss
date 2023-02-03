@@ -1,0 +1,84 @@
+//FONTS 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+//COLORS
+@import './variables/colors.scss';
+
+
+body {
+  background-color:  #242424;
+  padding: 0;
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.right-container {
+  align-self: center;
+  @media (min-width: 800px) {
+    align-self: flex-start;
+  }
+}
+
+.empty {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 18px;
+  text-align: center;
+  color: $white;
+  background: none;
+}
+
+.customDrawer {
+  transition: all 300ms ease-in-out;
+  position: fixed;
+  height: 100vh;
+  background-color: $black;
+  z-index: 6;
+  width: 100vw;
+  @media (min-width: 800px) {
+    background-color: rgba(36, 36, 36, 0.9);
+    width: 761px;
+    min-width: 761px;
+  }
+}
+
+.offcanvas {
+  width: 100%;
+  min-width: 100%;
+  @media (min-width: 800px) {
+    background-color: rgba(36, 36, 36, 0.9);
+    width: 761px;
+    min-width: 761px;
+  }
+}
+
+.offcanvas-backdrop {
+  z-index: 5;
+}
+
+.customModal {
+  width: 100%;
+  @media (min-width: 700px) {
+    min-width: 730px;
+  }
+  .modal-content {
+    background-color: $black;
+    border-radius: 0;
+    padding: 24px;
+    width: 100%;
+    @media (min-width: 700px) {
+      min-width: 730px;
+    }
+  }
+
+  #drag-file-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+}

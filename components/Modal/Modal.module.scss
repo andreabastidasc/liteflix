@@ -1,0 +1,10 @@
+@import '../../styles/variables/colors.scss';
+
+.modal {
+    &-close {
+        background: none;
+        border: none;
+        align-self: flex-end;
+        cursor: pointer;
+    }
+}

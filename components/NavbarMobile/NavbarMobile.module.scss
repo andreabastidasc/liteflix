@@ -1,0 +1,12 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}

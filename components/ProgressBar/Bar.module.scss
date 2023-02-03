@@ -1,0 +1,52 @@
+@import '../../styles/variables/colors.scss';
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: #e0e0de;
+    border-radius: 50px;
+    margin-top: 16px;
+    @media (min-width: 800px) {
+        width: 600px;
+    }
+
+    &-filler {
+        transition: all 300ms ease;
+        background-color: $aqua;
+        height: 10px;
+        position: relative;
+        top: -3px;
+    }
+
+    &-percentage {
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 4px;
+        color: $white;
+        margin: 0;
+    }
+
+    &-wrapper {
+        width: 100%;
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: 800px) {
+            width: 600px;
+        }
+
+        button {
+            background: none;
+            border: none;
+            align-self: flex-end;
+            width: min-content;
+            margin-top: 20px;
+            color: $white;
+        }
+    }
+
+   
+}

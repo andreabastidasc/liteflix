@@ -1,0 +1,83 @@
+@import '../../styles/variables/colors.scss';
+
+.dropdown {
+    margin-top: 80px;
+    position: relative;
+    @media (max-height: 780px) and (min-width: 800px) {
+        margin-top: 40px;
+    }
+   
+    &-toggle {   
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        background: none;
+        border: none;
+        cursor: pointer;  
+
+        p {
+            font-family: 'Bebas Neue';
+            font-style: normal;
+            font-weight: 100;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 4px;
+            color: $white;
+            margin: 0;
+            
+            span {
+                font-weight: 500;
+            }
+        }  
+        
+    }
+
+    &-indicator {
+        position: absolute;
+        top: -15px;
+        right: 25px;
+    }
+
+    &-box {
+        position: fixed;
+        box-sizing: border-box;
+        z-index: 4;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: $black;
+        width: 100%;
+        left: 0;
+        padding: 16px;
+        @media(min-width: 800px) {
+            position: absolute;
+            width: 241px;
+            max-width: 241px;
+            height: 96px;
+            z-index: 4;
+            right: 0;
+            margin-top: 10px;
+            justify-content: center;    
+            bottom: auto;
+            left: auto;  
+        }
+
+        button {
+            background: none;
+            border: none;
+            font-family: 'Bebas Neue';
+            font-style: normal;
+            font-weight: 100;
+            font-size: 16px;
+            color: $white;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+    }
+}

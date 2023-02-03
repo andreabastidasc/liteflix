@@ -1,0 +1,10 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 32px;
+    align-items: center;
+    @media(min-width: 800px) {
+        gap: 20px;
+    }
+}

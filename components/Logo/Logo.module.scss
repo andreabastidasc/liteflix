@@ -1,0 +1,20 @@
+@import '../../styles/variables/colors.scss';
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 34px;
+    letter-spacing: 4px;
+    color: $aqua;   
+    margin: 0;
+    span {
+        font-weight: 200;
+        font-size: 28px;
+        @media(min-width: 800px) {
+            font-size: 34px;
+        }
+    }  
+    @media(min-width: 800px) {
+        font-size: 34px;
+    }
+}

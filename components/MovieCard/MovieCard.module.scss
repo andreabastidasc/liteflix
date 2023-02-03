@@ -1,0 +1,119 @@
+@import '../../styles/variables/colors.scss';
+
+.card {
+    width: 220px;
+    height: 146px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: .5s ease;
+    &:hover { 
+        transition: .5s ease;
+        .card-overlay {
+            display: flex;
+            gap: 23px;
+            transition: .5s ease;
+        }
+        .card-wrapper {
+            display: none;
+            transition: .5s ease;
+        }
+    }
+
+    img {
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 4px;
+    }
+
+    &-wrapper {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 22.78%, #000000 122.69%);
+        border-radius: 4px;
+        position: absolute;
+        width: 220px;
+        height: 100px;
+        top: 31.7%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transition: .5s ease;
+    }
+
+    &-overlay {
+        display: none;
+        background: rgba(36, 36, 36, 0.7);
+        border-radius: 4px;
+        width: 220px;
+        max-width: 220px;
+        max-height: 146px;
+        height: 146px;
+        position: absolute;
+        top: 0;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-direction: column;
+        transition: .5s ease;
+
+        &-body {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-left: 16px;
+
+            p {
+                text-align: left;
+                margin: 0;
+            }
+        }
+
+        &-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 16px;
+            width: 80%;
+            margin-bottom: 16px;
+
+            p {
+                font-family: 'Bebas Neue';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 12px;
+                letter-spacing: 2px;
+                color: $white;
+                margin: 0;
+            }
+
+            &-review {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                p {
+                    font-family: 'Bebas Neue';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 12px;
+                    letter-spacing: 2px;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &-title {
+        font-family: 'Bebas Neue';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 4px;
+        color: $white;
+        text-align: center;
+        margin-top: 16px;
+        @media (min-width: 800px) {
+            margin-bottom: 0;
+        }
+    }
+}
