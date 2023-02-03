@@ -1,20 +1,20 @@
 import React from 'react'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import styles from './MovieCard.module.scss'
 import Icon from '../icons'
 
 const MovieCard = props => {
-  const {image, title, votes, date} = props;
+  const { image, title, votes, date } = props
 
   const parseDate = () => {
-    const objectDate = new Date(date);
+    const objectDate = new Date(date)
 
     const year = objectDate.getFullYear()
 
-    return year;
+    return year
   }
 
-  const movieYear = parseDate();
+  const movieYear = parseDate()
 
   return (
     <motion.div className={styles.card}>
@@ -40,4 +40,4 @@ const MovieCard = props => {
   )
 }
 
-export default MovieCard;
+export default MovieCard

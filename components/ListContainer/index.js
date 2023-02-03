@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './ListContainer.module.scss'
 
-const ListContainer = ({children}) => {
+const ListContainer = ({ children }) => {
   return (
     <div className={styles.list}>
         {children}
@@ -9,4 +9,4 @@ const ListContainer = ({children}) => {
   )
 }
 
-export default ListContainer;
+export default ListContainer

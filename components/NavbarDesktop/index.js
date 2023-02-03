@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './navbar.module.scss'
-import Icon from '../icons';
-import AddButton from '../AddButton';
-import Logo from '../Logo';
+import Icon from '../icons'
+import AddButton from '../AddButton'
+import Logo from '../Logo'
 
 const NavbarDesktop = props => {
-  const {setOpenDrawer, setShowModal} = props;
+  const { setOpenDrawer, setShowModal } = props
 
   return (
     <nav className={styles.navbar}>

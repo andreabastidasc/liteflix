@@ -1,6 +1,7 @@
 module.exports = {
   env: {
     browser: true,
+    commonjs: true,
     es2021: true
   },
   extends: [
@@ -10,18 +11,12 @@ module.exports = {
   overrides: [
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+    ecmaVersion: 'latest'
   },
   plugins: [
     'react'
   ],
   rules: {
-    'react/prop-types': 0,
-    'react/jsx-uses-react': 'on',
-    'react/react-in-jsx-scope': 'on',
-    "@babel/plugin-transform-react-jsx": {
-      "throwIfNamespace": false
-    }
+    'react/prop-types': 0
   }
 }

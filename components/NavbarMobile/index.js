@@ -1,11 +1,11 @@
 import React from 'react'
-import Icon from '../icons';
-import Logo from '../Logo';
+import Icon from '../icons'
+import Logo from '../Logo'
 import styles from './NavbarMobile.module.scss'
 import Image from 'next/image'
 
 const NavbarMobile = props => {
-  const {setOpenDrawer, setShowModal} = props;
+  const { setOpenDrawer, setShowModal } = props
 
   const handleOpen = (e) => {
     e.preventDefault
@@ -26,5 +26,4 @@ const NavbarMobile = props => {
   )
 }
 
-export default NavbarMobile;
-
+export default NavbarMobile

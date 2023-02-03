@@ -1,18 +1,18 @@
-import React, {useRef} from 'react'
-import { motion, AnimatePresence } from "framer-motion"
-import Icon from '../icons';
+import React, { useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Icon from '../icons'
 import styles from './Dropdown.module.scss'
-import useOutsideClick from '@/hooks/useOutsideClick';
-import useMobileScreenSize from '@/hooks/useMobileScreenSize';
+import useOutsideClick from '@/hooks/useOutsideClick'
+import useMobileScreenSize from '@/hooks/useMobileScreenSize'
 
 const CustomDropdown = props => {
-  const {open, setOpen, selected, setSelected} = props;
-  const isMobile = useMobileScreenSize();
-  const dropdownRef = useRef();
+  const { open, setOpen, selected, setSelected } = props
+  const isMobile = useMobileScreenSize()
+  const dropdownRef = useRef()
 
   useOutsideClick(dropdownRef, () => {
-    setOpen(false);
-  });
+    setOpen(false)
+  })
 
   return (
     <div className={styles.dropdown}>
@@ -24,19 +24,21 @@ const CustomDropdown = props => {
         {open && (
           <motion.div
             key="dropdown"
-            initial={!isMobile ? { opacity: 0 } : {y: 250}}
-            animate={!isMobile ? { opacity: 1 } : {y: 0}}
-            exit={!isMobile ? { opacity: 0 } : {y: 1}}
-            ref={dropdownRef} 
+            initial={!isMobile ? { opacity: 0 } : { y: 250 }}
+            animate={!isMobile ? { opacity: 1 } : { y: 0 }}
+            exit={!isMobile ? { opacity: 0 } : { y: 1 }}
+            ref={dropdownRef}
             className={styles['dropdown-box']}
           >
-            {!isMobile ? (
+            {!isMobile
+              ? (
               <div className={styles['dropdown-indicator']}>
                 <Icon name="triangle" width="12" height="12" />
               </div>
-            ) : null}
+                )
+              : null}
             <button onClick={() => setSelected('POPULARES')}>
-              POPULARES 
+              POPULARES
               {selected === 'POPULARES' ? <Icon name="check" /> : null}
             </button>
             <button onClick={() => setSelected('AGREGADAS')}>
@@ -46,9 +48,9 @@ const CustomDropdown = props => {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
     </div>
   )
 }
 
-export default CustomDropdown;
+export default CustomDropdown

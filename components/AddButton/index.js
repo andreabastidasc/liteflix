@@ -1,9 +1,9 @@
 import React from 'react'
-import Icon from '../icons';
+import Icon from '../icons'
 import styles from './AddButton.module.scss'
 
 const AddButton = props => {
-  const {action} = props;
+  const { action } = props
   return (
     <button className={styles.button} onClick={action}>
       <Icon name="plus" />
@@ -12,4 +12,4 @@ const AddButton = props => {
   )
 }
 
-export default AddButton;
+export default AddButton
