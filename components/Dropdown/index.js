@@ -14,6 +14,11 @@ const CustomDropdown = props => {
     setOpen(false)
   })
 
+  const handleSelected = (value) => {
+    setSelected(value)
+    setOpen(false)
+  }
+
   return (
     <div className={styles.dropdown}>
       <button className={styles['dropdown-toggle']} onClick={() => setOpen(prev => !prev)}>
@@ -37,11 +42,11 @@ const CustomDropdown = props => {
               </div>
                 )
               : null}
-            <button onClick={() => setSelected('POPULARES')}>
+            <button onClick={() => handleSelected('POPULARES')}>
               POPULARES
               {selected === 'POPULARES' ? <Icon name="check" /> : null}
             </button>
-            <button onClick={() => setSelected('AGREGADAS')}>
+            <button onClick={() => handleSelected('AGREGADAS')}>
               MIS PELÍCULAS
               {selected === 'AGREGADAS' ? <Icon name="check" /> : null}
             </button>

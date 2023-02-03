@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getShows } from '@/services/getShows'
 import { getShowById } from '@/services/getShowById'
 import { motion } from 'framer-motion'
+import useMobileScreenSize from '@/hooks/useMobileScreenSize'
 import Head from 'next/head'
 import Layout from '@/components/layout'
 import Hero from '@/components/Hero'
@@ -21,6 +22,7 @@ export default function Home () {
   const [showModal, setShowModal] = useState(false)
   const [openDrawer, setOpenDrawer] = useState(false)
   const today = new Date()
+  const isMobile = useMobileScreenSize()
 
   const getTvShow = async () => {
     setLoading(true)
@@ -82,8 +84,8 @@ export default function Home () {
                 {shows.map((item, index) => (
                   <motion.div
                     key={Math.random()}
-                    initial={{ y: -100 }}
-                    animate={{ y: 0 }}
+                    initial={!isMobile && !open ? { y: -100 } : isMobile && !open ? { x: -100 } : { x: 0 }}
+                    animate={!isMobile && !open ? { y: 0 } : isMobile && !open ? { x: 0 } : { x: 0 }}
                     transition={{ ease: 'easeOut', duration: 3 / (index + 1) }}
                   >
                     <MovieCard date={item.first_air_date} votes={item.vote_average} title={item.name} image={`https://image.tmdb.org/t/p/original${item.poster_path}`} />
@@ -98,8 +100,8 @@ export default function Home () {
                       addedMovies.map((item, index) => (
                         <motion.div
                           key={Math.random()}
-                          initial={{ y: -100 }}
-                          animate={{ y: 0 }}
+                          initial={!isMobile && !open ? { y: -100 } : isMobile && !open ? { x: -100 } : { x: 0 }}
+                          animate={!isMobile && !open ? { y: 0 } : isMobile && !open ? { x: 0 } : { x: 0 }}
                           transition={{ ease: 'easeOut', duration: 3 / (index + 1) }}
                         >
                           <MovieCard title={item.name} votes={10} image={item.image} date={today} />
