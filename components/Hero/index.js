@@ -25,6 +25,10 @@ const Hero = props => {
               animate={{ x: 0 }}
               className={styles['hero-button']}
               transition={{ ease: 'easeOut', duration: 4 }}
+              whileHover={{
+                gap: '18px',
+                transition: { ease: 'easeOut', duration: 0.5 }
+              }}
             >
                 <Icon name="play" />
                 Reproducir
@@ -33,6 +37,10 @@ const Hero = props => {
               initial={{ y: 100 }}
               animate={{ y: 0 }}
               transition={{ ease: 'easeOut', duration: 4 }}
+              whileHover={{
+                gap: '18px',
+                transition: { ease: 'easeOut', duration: 0.5 }
+              }}
               className={`${styles['hero-button']} ${styles['hero-button-outlined']}`}
             >
                 <Icon name="plus" />
